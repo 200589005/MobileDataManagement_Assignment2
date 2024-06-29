@@ -14,6 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if !UserDefaults.standard.bool(forKey: "DBSavedFirstTime") {
+            self.getAndSetupInitialDB()
+            UserDefaults.standard.setValue(true, forKey: "DBSavedFirstTime")
+            UserDefaults.standard.synchronize()
+        }
         return true
     }
 
@@ -31,6 +36,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
+    func getAndSetupInitialDB() {
+        if let path = Bundle.main.path(forResource: "db_movies", ofType: "json") {
+            do {
+                  let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                  let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+                if let jsonResult = jsonResult as? [[String:Any]] {
+                            // do stuff
+                    for item in jsonResult {
+                        _ = MoviesEntity.createOrUpdateMovies(dictData: item, context: CoreDataStackManager.sharedInstance.managedObjectContext)
+                    }
+                  }
+              } catch {
+                   // handle error
+              }
+        }
+    }
 
 }
 

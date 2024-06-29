@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23E214" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="MoviesEntity" representedClassName="MoviesEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="actors" attributeType="String" defaultValueString=""/>
+        <attribute name="createdAt" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="criticsRating" attributeType="String" defaultValueString=""/>
+        <attribute name="directors" attributeType="String" defaultValueString=""/>
+        <attribute name="genres" attributeType="String" defaultValueString=""/>
+        <attribute name="id" attributeType="String" defaultValueString=""/>
+        <attribute name="image" attributeType="String" defaultValueString=""/>
+        <attribute name="length" attributeType="String" defaultValueString=""/>
+        <attribute name="mpaRating" attributeType="String" defaultValueString=""/>
+        <attribute name="shortDescriptionMovie" attributeType="String" defaultValueString=""/>
+        <attribute name="studio" attributeType="String" defaultValueString=""/>
+        <attribute name="title" attributeType="String" defaultValueString=""/>
+        <attribute name="updatedAt" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="writers" attributeType="String" defaultValueString=""/>
+        <attribute name="year" attributeType="String" defaultValueString=""/>
+    </entity>
+</model>
