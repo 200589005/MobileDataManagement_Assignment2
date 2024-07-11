@@ -50,16 +50,48 @@
                                     <constraint firstAttribute="height" constant="80" id="wbc-2X-9KH"/>
                                 </constraints>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="z73-4t-W4v">
+                                <rect key="frame" x="15" y="121" width="290" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWs-Sj-HA5">
+                                        <rect key="frame" x="0.0" y="0.0" width="135" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Delete">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnDeleteAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="xM1-8N-cqy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXa-jL-EOs">
+                                        <rect key="frame" x="155" y="0.0" width="135" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Edit">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnEditAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="5dU-AC-S2l"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="z73-4t-W4v" secondAttribute="bottom" constant="10" id="5so-Ag-8PH"/>
                             <constraint firstItem="TQJ-uC-ko1" firstAttribute="leading" secondItem="ins-MO-1Oa" secondAttribute="trailing" constant="10" id="M8T-Wd-8am"/>
                             <constraint firstItem="ins-MO-1Oa" firstAttribute="top" secondItem="D6Q-uu-mVt" secondAttribute="top" constant="10" id="RmC-mx-k7a"/>
+                            <constraint firstItem="z73-4t-W4v" firstAttribute="top" relation="greaterThanOrEqual" secondItem="TQJ-uC-ko1" secondAttribute="bottom" constant="10" id="V3W-U7-a0x"/>
                             <constraint firstItem="ins-MO-1Oa" firstAttribute="leading" secondItem="D6Q-uu-mVt" secondAttribute="leading" constant="15" id="b0F-h3-18N"/>
+                            <constraint firstItem="z73-4t-W4v" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ins-MO-1Oa" secondAttribute="bottom" constant="10" id="fN9-Pv-Pg5"/>
                             <constraint firstItem="TQJ-uC-ko1" firstAttribute="top" secondItem="ins-MO-1Oa" secondAttribute="top" id="g5g-aJ-QL0"/>
                             <constraint firstAttribute="trailing" secondItem="TQJ-uC-ko1" secondAttribute="trailing" constant="15" id="hUu-DS-2U9"/>
-                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ins-MO-1Oa" secondAttribute="bottom" constant="10" id="n9e-Ka-yx0"/>
-                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="TQJ-uC-ko1" secondAttribute="bottom" constant="10" id="pdQ-ah-q5a"/>
+                            <constraint firstAttribute="trailing" secondItem="z73-4t-W4v" secondAttribute="trailing" constant="15" id="mWO-iG-hxe"/>
+                            <constraint firstItem="z73-4t-W4v" firstAttribute="leading" secondItem="D6Q-uu-mVt" secondAttribute="leading" constant="15" id="usq-BD-l62"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -85,10 +117,13 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

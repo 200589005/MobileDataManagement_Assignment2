@@ -67,6 +67,11 @@ extension MoviesEntity {
         }
         if let image = dictData["image"] as? String {
             moviesDetails?.image = image
+            moviesDetails?.isLocalImage = false
+        }
+        if let imageData = dictData["imageData"] as? Data {
+            moviesDetails?.localImage = imageData
+            moviesDetails?.isLocalImage = true
         }
         
         if moviesDetails?.createdAt == nil {
@@ -80,5 +85,20 @@ extension MoviesEntity {
         return moviesDetails
         
     }
-    
+ 
+    class func deleteMoviesFromID(id:String) {
+        let request = NSFetchRequest<NSFetchRequestResult>.init(entityName: "MoviesEntity")
+        let predicate = NSPredicate(format: "id == %@",id)
+        request.predicate = predicate
+        do {
+            let arrData = try CoreDataStackManager.sharedInstance.managedObjectContext.fetch(request) as? [MoviesEntity] ?? []
+            for model in arrData {
+                CoreDataStackManager.sharedInstance.managedObjectContext.delete(model)
+            }
+            
+            CoreDataStackManager.saveContextCommon(context: CoreDataStackManager.sharedInstance.managedObjectContext)
+            CoreDataStackManager.sharedInstance.saveContext()
+        }
+        catch { print(error) }
+    }
 }

@@ -32,6 +32,9 @@
 		18083E2E2C304FB200A0AA58 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 18083E2D2C304FB200A0AA58 /* SDWebImageMapKit */; };
 		18083E312C304FBE00A0AA58 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 18083E302C304FBE00A0AA58 /* IQKeyboardManagerSwift */; };
 		18083E332C30517900A0AA58 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18083E322C30517900A0AA58 /* UIImage+Extension.swift */; };
+		186C1F812C38798800031308 /* AddMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C1F802C38798800031308 /* AddMoviesViewController.swift */; };
+		188DBB222C4031F90009FBD3 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188DBB212C4031F90009FBD3 /* StringExtensions.swift */; };
+		188DBB242C4046A50009FBD3 /* CameraAndGalleryPermisson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188DBB232C4046A50009FBD3 /* CameraAndGalleryPermisson.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +62,9 @@
 		18083E262C303F9100A0AA58 /* MovieListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListTableViewCell.swift; sourceTree = "<group>"; };
 		18083E272C303F9100A0AA58 /* MovieListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieListTableViewCell.xib; sourceTree = "<group>"; };
 		18083E322C30517900A0AA58 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		186C1F802C38798800031308 /* AddMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoviesViewController.swift; sourceTree = "<group>"; };
+		188DBB212C4031F90009FBD3 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		188DBB232C4046A50009FBD3 /* CameraAndGalleryPermisson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraAndGalleryPermisson.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,8 @@
 		18083E042C302F6500A0AA58 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				188DBB232C4046A50009FBD3 /* CameraAndGalleryPermisson.swift */,
+				188DBB212C4031F90009FBD3 /* StringExtensions.swift */,
 				18083E322C30517900A0AA58 /* UIImage+Extension.swift */,
 				18083E052C302F7800A0AA58 /* UIViewControllerExtensions.swift */,
 				18083E142C30304200A0AA58 /* UIFontExt.swift */,
@@ -164,6 +172,7 @@
 			children = (
 				18083E252C303EBF00A0AA58 /* Cell */,
 				18083E022C302F3800A0AA58 /* MovieListViewController.swift */,
+				186C1F802C38798800031308 /* AddMoviesViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -271,11 +280,14 @@
 				18083E1C2C3032B400A0AA58 /* MoviesApp.xcdatamodeld in Sources */,
 				18083E062C302F7800A0AA58 /* UIViewControllerExtensions.swift in Sources */,
 				18083DEF2C302E3500A0AA58 /* AppDelegate.swift in Sources */,
+				188DBB242C4046A50009FBD3 /* CameraAndGalleryPermisson.swift in Sources */,
 				18083DF12C302E3500A0AA58 /* SceneDelegate.swift in Sources */,
 				18083E032C302F3800A0AA58 /* MovieListViewController.swift in Sources */,
 				18083E282C303F9100A0AA58 /* MovieListTableViewCell.swift in Sources */,
 				18083E332C30517900A0AA58 /* UIImage+Extension.swift in Sources */,
 				18083E152C30304200A0AA58 /* UIFontExt.swift in Sources */,
+				188DBB222C4031F90009FBD3 /* StringExtensions.swift in Sources */,
+				186C1F812C38798800031308 /* AddMoviesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

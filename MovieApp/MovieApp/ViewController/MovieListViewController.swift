@@ -37,7 +37,20 @@ class MovieListViewController: UIViewController {
         tblMovies.delegate = self
         tblMovies.dataSource = self
         tblMovies.reloadData()
+        self.setupDefaultNavigation()
     }
+    
+    func navigateToAddMovies(movie: MoviesEntity) {
+        let addMovies: AddMoviesViewController = AddMoviesViewController.instantiateViewController(identifier: .main)
+        addMovies.movie = movie
+        self.pushVC(addMovies)
+    }
+    
+    @IBAction func btnAddAction(_ sender: UIBarButtonItem) {
+        let addMovies: AddMoviesViewController = AddMoviesViewController.instantiateViewController(identifier: .main)
+        self.pushVC(addMovies)
+    }
+    
     
 }
 
@@ -51,6 +64,8 @@ extension MovieListViewController : UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "MovieListTableViewCell") as? MovieListTableViewCell {
+            cell.indexPath = indexPath
+            cell.delegate = self
             cell.cellConfig(modal: arrMovies[indexPath.row])
             return cell
             
@@ -61,7 +76,25 @@ extension MovieListViewController : UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+    }
+    
+}
+
+extension MovieListViewController: MovieListTableViewCellProtocol {
+    func deleteMoviesAtIndex(indexPath: IndexPath) {
+        self.showAlertWithOkAndCancelHandler(string: "Are you sure you want to delete this movies?", strOk: "YES", strCancel: "NO") { isOkBtnPressed in
+            if isOkBtnPressed {
+                let movie = self.arrMovies[indexPath.row]
+                MoviesEntity.deleteMoviesFromID(id: movie.id ?? "")
+                DispatchQueue.main.async {
+                    self.getAndSetMovies()
+                }
+            }
+        }
         
     }
     
+    func editMoviesAtIndex(indexPath: IndexPath) {
+        self.navigateToAddMovies(movie: arrMovies[indexPath.row])
+    }
 }

@@ -40,6 +40,26 @@ extension UIViewController {
         self.navigationController?.view.layer.add(transition, forKey: kCATransition)
         self.navigationController?.popToViewController(viewController, animated: false)
     }
+    
+    func pushVC(_ vc: UIViewController) {
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    func popVC() {
+        _ = navigationController?.popViewController(animated: true)
+    }
+    
+    func setupDefaultNavigation() {
+        let appearance = UINavigationBarAppearance()
+          appearance.configureWithDefaultBackground()
+          appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
+          appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
+          
+        self.navigationController?.navigationBar.standardAppearance = appearance
+        self.navigationController?.navigationBar.compactAppearance = appearance
+        self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
+    }
 }
 
 struct ScreenSize {

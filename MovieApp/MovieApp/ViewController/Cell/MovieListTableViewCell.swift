@@ -8,8 +8,16 @@
 import UIKit
 import CoreData
 
+protocol MovieListTableViewCellProtocol {
+    func deleteMoviesAtIndex(indexPath: IndexPath)
+    func editMoviesAtIndex(indexPath: IndexPath)
+}
+
 class MovieListTableViewCell: UITableViewCell {
 
+    var indexPath: IndexPath?
+    var delegate: MovieListTableViewCellProtocol?
+    
     @IBOutlet weak var imgMovies: UIImageView!
     @IBOutlet weak var lblMovies: UILabel!
     @IBOutlet weak var lblStudio: UILabel!
@@ -31,8 +39,22 @@ class MovieListTableViewCell: UITableViewCell {
         lblMovies.text = modal.title
         lblStudio.text = modal.studio
         lblRating.text = modal.criticsRating
-        print(modal.image)
-        imgMovies.sd_setImageCustom(url: modal.image ?? "")
+        if modal.isLocalImage, let data = modal.localImage, let image = UIImage(data: data) {
+            imgMovies.image = image
+        } else {
+            imgMovies.sd_setImageCustom(url: modal.image ?? "",placeHolderImage: UIImage(named: "no-photo"))
+        }
+        
+    }
+    
+    @IBAction func btnDeleteAction(_ sender: UIButton) {
+        guard let index = indexPath else { return }
+        delegate?.deleteMoviesAtIndex(indexPath: index)
+    }
+    
+    @IBAction func btnEditAction(_ sender: UIButton) {
+        guard let index = indexPath else { return }
+        delegate?.editMoviesAtIndex(indexPath: index)
     }
     
 }

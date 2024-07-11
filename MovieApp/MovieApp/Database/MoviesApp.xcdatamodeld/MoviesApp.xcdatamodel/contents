@@ -8,7 +8,9 @@
         <attribute name="genres" attributeType="String" defaultValueString=""/>
         <attribute name="id" attributeType="String" defaultValueString=""/>
         <attribute name="image" attributeType="String" defaultValueString=""/>
+        <attribute name="isLocalImage" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="length" attributeType="String" defaultValueString=""/>
+        <attribute name="localImage" optional="YES" attributeType="Binary"/>
         <attribute name="mpaRating" attributeType="String" defaultValueString=""/>
         <attribute name="shortDescriptionMovie" attributeType="String" defaultValueString=""/>
         <attribute name="studio" attributeType="String" defaultValueString=""/>
